@@ -1,9 +1,18 @@
 import 'package:binary_tree_dart/binary_tree_dart.dart';
 
 void main() {
-  final tree = createBinaryTree();
-  print(tree);
+  final tree = buildExampleTree();
+  if (tree.contains(5)) {
+    print("Found 5!");
+  } else {
+    print("Couldn't find 5");
+  }
 }
+
+// void main() {
+//   final tree = createBinaryTree();
+//   print(tree);
+// }
 
 BinaryNode<int> createBinaryTree() {
   final zero = BinaryNode(0);
@@ -20,4 +29,15 @@ BinaryNode<int> createBinaryTree() {
   nine.leftChild = eight;
 
   return seven;
+}
+
+BinarySearchTree<int> buildExampleTree() {
+  var tree = BinarySearchTree<int>();
+  tree.insert(3);
+  tree.insert(1);
+  tree.insert(4);
+  tree.insert(0);
+  tree.insert(2);
+  tree.insert(5);
+  return tree;
 }
